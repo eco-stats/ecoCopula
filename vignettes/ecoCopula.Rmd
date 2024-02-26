@@ -2,7 +2,7 @@
 title: "ecoCopula package for model based ordination and graphical modelling in ecology"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{the_basics}
+  %\VignetteIndexEntry{ecoCopula}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---

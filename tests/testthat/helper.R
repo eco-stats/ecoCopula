@@ -8,11 +8,7 @@ abund <- spider$abund
 
 pa <-(abund>0)*1
 
-
-library(labdsv)
-
-# site data
-data(brycesite)
+# brycesite 
 brycesite$plotcode=substr(brycesite$plotcode,3,5)
 #species data
 data(bryceveg)

@@ -1,8 +1,8 @@
 ## ecoCopula 
 <!-- badges: start -->
-  [![R-CMD-check](https://github.com/gordy2x/ecoCopula/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/gordy2x/ecoCopula/actions/workflows/R-CMD-check.yaml)
+  [![R-CMD-check](https://github.com/gordy2x/ecoCopula/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/eco-stats/ecoCopula/actions/workflows/R-CMD-check.yaml)
 [![License](http://img.shields.io/badge/license-LGPL%20%28%3E=%202.1%29-brightgreen.svg?style=flat)](http://www.gnu.org/licenses/gpl-2.0.html) [![DOI](https://zenodo.org/badge/139233335.svg)](https://zenodo.org/badge/latestdoi/139233335)
-[![Codecov test coverage](https://codecov.io/gh/gordy2x/ecoCopula/branch/master/graph/badge.svg)](https://app.codecov.io/gh/gordy2x/ecoCopula?branch=master)
+[![Codecov test coverage](https://codecov.io/gh/stats/ecoCopula/branch/master/graph/badge.svg)](https://app.codecov.io/gh/gordy2x/ecoCopula?branch=master)
 <!-- badges: end -->
 
 
@@ -18,14 +18,14 @@ install.packages("ecoCopula")
 For the development version with the latest bells and whistles:
 ```r
 # install.packages("devtools")
-devtools::install_github("gordy2x/ecoCopula")
+devtools::install_github("eco-stats/ecoCopula")
 ```
 
 For the development version with zero-inflated functionality:
 ```r
 # install.packages("devtools")
 # devtools::install_github("r-forge/countreg/pkg")
-devtools::install_github("gordy2x/ecoCopula", ref="e401671")
+devtools::install_github("eco-stats/ecoCopula", ref="e401671")
 ```
 
 If you have trouble installing, please email me at [g.popovic@unsw.edu.au](mailto:g.popovic@unsw.edu.au).
