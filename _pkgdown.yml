@@ -1,0 +1,5 @@
+url: https://eco-stats.github.io/ecoCopula/
+template:
+  bootstrap: 5
+  bootswatch: lumen
+

@@ -28,3 +28,4 @@ Suggests:
     grDevices
 VignetteBuilder: knitr
 Config/testthat/edition: 3
+URL: https://eco-stats.github.io/ecoCopula/
