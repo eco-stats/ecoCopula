@@ -8,18 +8,16 @@ vignette: >
 ---
 
 ```{r, include = FALSE}
+options(rmarkdown.html_vignette.check_title = FALSE)
+
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
   fig.width=5,
   fig.height = 3.5,
-  fig.align = 'center'
+  fig.align = 'center',
+  global.par = TRUE
 )
-```
-
-```{r setup, include = FALSE}
-options(rmarkdown.html_vignette.check_title = FALSE)
-knitr::opts_knit$set(global.par = TRUE)
 ```
 
 ```{r include = FALSE}
