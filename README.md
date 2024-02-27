@@ -29,3 +29,5 @@ devtools::install_github("eco-stats/ecoCopula", ref="e401671")
 ```
 
 If you have trouble installing, please email me at [g.popovic@unsw.edu.au](mailto:g.popovic@unsw.edu.au).
+
+Please note the original repository for this R package is found [here](https://github.com/gordy2x/ecoCopula)
