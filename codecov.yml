@@ -1,5 +1,5 @@
 comment: false
-
+  branch: master
 coverage:
   status:
     project:
