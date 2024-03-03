@@ -100,64 +100,93 @@
 <span class="r-in"><span><span class="co"># Fit models including all covariates are linear terms, but exclude for bare sand</span></span></span>
 <span class="r-in"><span><span class="va">fit0</span> <span class="op">&lt;-</span> <span class="fu"><a href="stackedsdm.html">stackedsdm</a></span><span class="op">(</span><span class="va">abund</span>, formula_X <span class="op">=</span> <span class="op">~</span><span class="va">.</span> <span class="op">-</span><span class="va">bare.sand</span>, data <span class="op">=</span> <span class="va">X</span>, family <span class="op">=</span> <span class="va">myfamily</span>, ncores<span class="op">=</span><span class="fl">2</span><span class="op">)</span> </span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/stats/residuals.html" class="external-link">residuals</a></span><span class="op">(</span><span class="va">fit0</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>           Alopacce   Alopcune    Alopfabr    Arctlute     Arctperi    Auloalbi</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units1   0.8869130  0.9097481 -0.81190640 -2.45240675 -0.835215570 -0.52369416</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units2  -0.3434584 -0.9285419 -1.26693704 -0.42205320  0.741866980 -0.80464653</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units3   0.4313962  1.3074959  0.86678335  1.79784186 -0.030260400 -0.07527700</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units4  -1.3737627  0.2032565 -0.94815803  0.58265579  0.136670486  1.53104295</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units5  -0.2249609  1.0077469 -0.75287691  0.69160086 -1.325299285  0.32981717</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units6   1.2342610  0.1397448 -0.51832000  1.19782843  0.210745882  1.35685155</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units7   0.4541911 -0.1540515 -0.07875371  1.02757341  0.878821230  1.10964521</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units8   1.1194705  1.7054761 -1.07451275 -0.51540063 -1.123259882  1.04308675</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units9  -1.4974539 -0.3217752 -1.08696726 -1.40761266 -0.095125030 -1.01135075</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units10 -0.9124340 -0.9291554 -0.13651135 -0.91132321  0.452484170 -2.32148272</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units11  0.8141393 -0.3619516  0.55302503  0.01265863 -0.546221068  0.71011149</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units12  0.7485332  1.7797721 -1.49261880 -0.35877439  0.053307725 -1.18958079</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units13  0.7846018  0.1793624  1.18981912 -0.65183651 -0.834690121 -0.03163515</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units14 -0.5820088 -0.3127485 -0.07760650 -1.37415144 -2.203783467 -1.72132593</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units15  0.2353525 -1.3801016 -0.07344529  0.64601729 -1.777065865 -0.77896618</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units16  0.7457426  1.2860228 -1.42969103  0.03938784 -2.146817581 -1.01807766</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units17 -2.3138827 -1.3192417  0.13066577 -1.35996525 -0.341142443 -2.78163936</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units18  1.7110392 -1.1234257  1.66199877  0.57863999  2.377504214 -0.38660130</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units19 -0.6435101  0.1551491 -0.59305613  0.03664649  0.281658741  1.39314165</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units20 -0.8077387  1.0961270  0.26967302  0.43097525  0.744021557  1.43312121</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units21  0.1799414  0.0880132 -2.48250717 -0.73268108 -0.356184550 -0.27696720</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units22  2.0169289 -0.8664772  0.66036782  1.25171761  0.029916194  0.54477225</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units23 -0.6512914  0.3671523  0.25917139 -1.10523471 -0.442893838  0.02689504</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units24 -0.2527131 -1.4458136  1.91403315 -1.10024146  1.346873448 -0.09592040</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units25  1.7866250  0.4226503  1.51610162 -1.26487559  0.729725975  0.38967748</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units26 -1.2796156 -2.2173195 -1.36672857 -0.53997974 -0.005356787  0.12131200</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units27  0.7067297  0.2317339 -0.31029183 -0.56705692  1.122302264 -1.05889610</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units28 -0.7188934  0.3740507 -0.12715910 -0.51187489 -0.699737127 -1.09361580</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>            Pardlugu    Pardmont     Pardnigr    Pardpull    Trocterr   Zoraspin</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units1  -0.03658536  0.61257576  1.466450081  1.56716658  2.43332162  1.1752814</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units2  -0.96016358 -1.60663332 -0.437807151 -1.06106616 -0.33479244 -0.5697288</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units3   1.09821768 -0.13165379  0.832924005  0.15068667  1.52117279 -0.5382376</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units4   0.74555610 -1.49509043  0.708895213  0.73736814  1.44838844  1.9508947</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units5   0.68174644 -1.12964618  0.660100230  1.29224723 -0.47125970 -0.3061021</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units6  -1.77293861  0.79679802  1.537359299  1.47370512  0.35348658  1.3255543</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units7   0.34490744  0.89550013 -0.001874459  0.24860959 -0.18120421 -0.5852381</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units8   1.73333383  0.89465532  0.756313011  0.04429322  0.66440951  0.2299663</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units9  -2.51972622 -0.48558475  0.052232665 -0.13262248 -1.59998751 -1.3148528</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units10 -0.08524834  0.69380499 -0.247828594  0.24560589 -1.71246678 -1.5524661</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units11 -0.38495318  1.26790406 -0.470603829 -0.71382043 -0.74749084 -0.3758293</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units12  0.49713902  1.07448909 -0.358277984 -0.09382804  0.24689604 -0.3493802</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units13  1.46214405  0.79896110  0.590744385 -0.76421536 -0.27900583  1.1921296</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units14  0.77110688 -0.62209717 -1.379489837 -1.21519550 -0.28563580 -0.6194211</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units15 -0.49186296 -1.79652094 -1.631311475 -0.52361755 -0.86271987 -0.6177669</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units16 -0.25759508  0.01903475  2.117588839  1.13942959  1.35330678  1.4412978</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units17 -1.08513324 -1.31010470 -1.021248832 -0.90614352 -0.96798062 -0.5538538</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units18 -0.68962440  0.40561843 -1.862376158  0.26443400 -0.65198383 -1.4515741</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units19  0.15145770  0.59199972  0.613649406 -1.34802685  0.77706557  0.6294775</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units20  1.15852574 -0.39965326 -0.114574480  0.09305082  0.67404046  0.3649610</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units21  0.11557620  1.21494144  0.097609395  2.54792863 -0.11211713 -0.1483822</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units22 -0.96438037  0.37612208 -0.708069044 -0.27089710  1.08916286 -1.2388342</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units23  2.32179501 -0.20369615  1.050249268 -0.82774796 -0.04437463  0.3455151</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units24 -1.02177187 -1.23419878  0.331172979 -0.54901038 -1.84374756 -0.4161752</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units25 -1.18018352  1.90532972  0.953462683 -1.62676695  0.10960545  1.4336785</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units26 -0.15357508 -1.33155093  1.888072967  0.37074764 -0.12415368  0.4824713</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units27 -1.47071921 -1.08525508 -0.765487226 -0.11159739 -2.16366490 -0.6351997</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units28 -1.48763895  0.24783708  0.943306420  1.40154223  0.30990543 -0.2085068</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>            Alopacce    Alopcune    Alopfabr    Arctlute   Arctperi    Auloalbi</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units1   0.84676395  0.90113447 -0.60660144  0.15442680 -0.6311492 -0.62360740</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units2  -0.80591386 -0.90472309  0.28382635 -1.09652669  2.7051703 -0.79258430</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units3   0.53716968  1.25368356  0.73320080  1.51361387 -0.3309628 -0.15235196</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units4  -1.56962127  0.18754882 -2.58323935  0.31953099  1.1630902  1.45042873</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units5  -0.70007835  0.98237346  0.45162688  0.40049171 -1.6871373  0.23480007</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units6  -0.60162141  0.08204508 -0.21648113  1.25389243  0.7615577  1.34188517</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units7   0.36801414 -0.16992164 -0.03210456  1.07116900 -1.0861311  1.11917089</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units8  -0.93997030  1.60616294  1.19209686  0.52261975  0.3880035  0.83515524</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units9  -1.43981252 -0.49724220 -0.78355308  0.17591727  0.8650652 -0.50575128</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units10 -0.82210122 -0.59294303 -0.25549161 -0.79428348 -0.3915386  0.25838852</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units11  0.83029558 -0.27992850  0.33738096 -1.21552115 -0.5308967  1.06606521</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units12  0.74126066  1.87958212 -1.65682064 -0.64846500  0.4267813 -0.74845115</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units13  0.66189067  0.19097304  1.37202293 -0.82095276 -0.1155773 -0.08102301</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units14 -0.12428711 -0.49407052 -0.43014544 -1.14900037 -0.6078006 -1.71908761</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units15 -1.42665142 -1.62556832  1.47471821 -1.84034112  1.6192901 -0.97799988</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units16  0.03836433  1.28028221  0.52346124  0.17898767  0.1903424  0.28472672</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units17  0.61470968 -1.49254594  1.06649342  0.94987251  1.1452556 -1.84668864</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units18 -2.99553019 -1.04457821 -0.30727629  0.60683392  0.1854106 -1.52041432</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units19  1.47588554  0.23312224 -1.21051746  1.14777232 -0.1881938 -0.39372275</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units20  0.46196853  0.89344266  0.12023512 -0.51104778 -0.6398224 -0.21288709</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units21  0.99266321  0.16923131  0.30186560 -0.04853513 -0.2052426  0.21825730</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units22  1.74921496 -0.71209329  0.61017559 -1.84854001 -0.3371181  0.47840319</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units23 -0.66530306 -0.66986003  0.22765969 -1.07468897 -0.5993605 -1.37092530</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units24 -0.18159553 -1.07773200  1.88618062 -0.94346708  1.3202356 -0.39004366</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units25  1.77367701  0.43308449  1.48175391  0.68294069  0.3186063  0.26741492</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units26 -1.29591520  0.14531344 -1.44386296 -0.83607019  0.1531407  0.36723046</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units27  0.66102149 -1.03575240 -0.35697241 -0.22932974  0.9881757 -0.22635542</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units28 -0.80409719 -0.72226129 -0.16656504 -0.54452761 -0.3709130  0.75625524</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>            Pardlugu    Pardmont     Pardnigr     Pardpull    Trocterr</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units1  -0.15529979  0.61162906  1.388567774  1.580238645  2.43554057</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units2  -0.74059598 -1.56539604 -0.394992875 -1.065985150 -0.33452021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units3   1.32450281 -0.14625283  0.847925882  0.147322828  1.50602885</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units4   0.99418481 -1.41388288  0.715584584  0.748173860  1.45524225</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units5   0.05696165 -0.98776657  0.663419641  1.305130860 -0.46411210</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units6  -2.46656211  0.79082736  1.509057535  1.509600172  0.34794234</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units7   0.67644082  0.88177118  0.001694762  0.241591034 -0.17404911</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units8   1.73334998  1.14886093  0.749165801  0.836116548  0.61702647</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units9   1.05510660 -0.49303435 -0.225385269 -0.296598391 -1.64092213</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units10 -1.28544027  0.72152031 -0.089990886 -0.625627849 -1.62939799</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units11  0.16008074  1.26199170 -0.348386039 -1.207344511 -0.91321762</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units12  0.09982693  1.07779068 -0.347851496 -0.008974913  0.18519985</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units13  1.42321372  0.81342008  0.588209944 -0.783199881 -0.27820064</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units14  0.83218978 -0.62361557 -1.370200529 -1.203454186 -0.27737316</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units15 -0.30531527 -1.96310455 -1.525919763 -0.914965315 -0.85293974</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units16 -0.34609385  1.26191171  2.160604304  0.379924008  1.34661108</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units17 -0.76133229 -1.81839424 -1.212556216 -1.046400861 -0.95727795</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units18 -0.59152347 -0.04500548 -0.858840601 -0.783645808 -0.69396322</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units19  0.14857238 -2.76876012  1.088228690 -0.994971191  0.78600749</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units20  1.24765086  0.02444553 -0.031964786 -0.656284892  0.66770767</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units21  0.06174067  1.22370247  0.126814017  2.586227799 -0.13931405</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units22 -0.96333122  0.58206577 -0.330051706  0.701922779  1.02603911</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units23  2.03192490 -0.22853509 -0.525335452  1.005356980 -0.08017796</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units24 -0.53459813 -1.19476455  0.260915924  0.451479704 -1.95271802</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units25 -1.28505093  1.90803762  0.964923910 -0.311800427  0.15784024</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units26 -0.21827439 -0.51633915 -0.061548333 -1.734712297  0.45113334</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units27 -0.84923222 -1.07313568 -0.433837627  1.265191408 -2.34110636</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units28 -0.72362752  0.31798783  0.935715456  1.661593609  0.68401794</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>            Zoraspin</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units1   1.20270292</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units2  -0.64381557</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units3  -0.68176021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units4   1.93188045</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units5  -0.32977002</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units6   1.29676287</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units7  -0.59755860</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units8   0.32678568</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units9  -0.93120131</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units10 -0.01442898</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units11 -1.69465063</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units12 -0.96918643</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units13  1.20027315</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units14 -0.61093435</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units15 -0.46768975</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units16  1.16411525</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units17 -0.53751792</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units18 -2.28768233</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units19  0.42576996</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units20  0.50473153</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units21 -0.01702470</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units22 -1.33452255</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units23 -0.07235338</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units24  0.53606500</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units25  1.29568163</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units26 -0.64525976</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units27 -0.25685202</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units28  0.31167168</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># Example 2: Funkier example where Species are assumed to have different distributions</span></span></span>
 <span class="r-in"><span><span class="va">abund</span><span class="op">[</span>,<span class="fl">1</span><span class="op">:</span><span class="fl">3</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="op">(</span><span class="va">abund</span><span class="op">[</span>,<span class="fl">1</span><span class="op">:</span><span class="fl">3</span><span class="op">]</span><span class="op">&gt;</span><span class="fl">0</span><span class="op">)</span><span class="op">*</span><span class="fl">1</span> <span class="co"># First three columns for presence absence</span></span></span>
@@ -165,93 +194,93 @@
 <span class="r-in"><span>              <span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"negative.binomial"</span><span class="op">)</span>, <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">ncol</a></span><span class="op">(</span><span class="va">abund</span><span class="op">)</span><span class="op">-</span><span class="fl">3</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">fit0</span> <span class="op">&lt;-</span> <span class="fu"><a href="stackedsdm.html">stackedsdm</a></span><span class="op">(</span><span class="va">abund</span>, formula_X <span class="op">=</span> <span class="op">~</span> <span class="va">bare.sand</span>, data <span class="op">=</span> <span class="va">X</span>, family <span class="op">=</span> <span class="va">myfamily</span>, ncores<span class="op">=</span><span class="fl">2</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/stats/residuals.html" class="external-link">residuals</a></span><span class="op">(</span><span class="va">fit0</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>            Alopacce    Alopcune     Alopfabr      Arctlute   Arctperi</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units1   0.33315166 -0.45704288 -1.889192180 -1.600195e+00  0.7689570</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units2  -0.03238627 -0.73521463  0.499899271 -4.532242e-01 -0.5579963</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units3   1.95983764 -0.37241773  1.543043324  1.003620e+00  0.7771763</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units4   1.94638160 -0.04463378 -0.834266810  8.764060e-01  0.6568944</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units5   1.30079752  2.11396086 -0.574175312  9.273521e-01 -1.3985308</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units6  -1.22305811  1.69484926 -2.535723657  1.996624e+00  0.1106641</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units7   0.78865978 -0.72376643 -0.036310641  2.029272e+00  0.7765786</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units8  -0.51004066 -0.17320466  0.489190424  5.371593e-01  1.4750978</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units9   1.18696886 -0.01258353 -0.647164359 -1.631216e+00  0.2916488</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units10  0.46435962  0.09670373  0.864056016 -7.016631e-01 -1.0708067</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units11  0.18909723  1.21529769  2.433430470 -1.346101e+00 -0.8260949</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units12  0.56444408 -1.09589536 -1.459589659 -1.056693e+00 -0.5004468</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units13  1.23242167  0.06079179  1.982137455  1.153123e+00 -0.7469696</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units14 -0.29648187 -0.40458829 -0.703529372  7.770033e-01  0.1889098</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units15  0.12083750 -2.24705994 -0.016884204 -4.006578e-01 -0.5646070</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units16 -0.46343847 -0.23871488 -1.510713784 -7.482922e-01 -0.9340590</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units17 -0.73792026 -1.48068108 -0.287714178  4.505429e-05 -0.8477073</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units18 -1.63086716 -0.66597608  0.577354893 -5.758727e-01 -0.7377657</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units19 -0.62883677 -0.38725909 -1.244216517  7.281634e-02  1.3022767</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units20  0.03832647  1.38451676  0.079720827 -2.557669e-01 -1.8966587</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units21 -0.42258167  1.65747371  0.464667179  7.339848e-02  0.6045169</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units22 -0.14723836 -0.19833534 -1.329784104  5.010819e-01  0.5140904</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units23  0.55666097  0.41207716  0.785301172 -4.906617e-01  1.2728020</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units24  0.49650431 -1.05018555  0.051647675  6.751196e-01  0.7924462</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units25  0.84897452  1.00801365 -1.015652293 -4.270188e-01 -0.8805808</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units26 -0.66168757  0.93049851 -0.007206241  1.083674e-01  0.3401880</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units27 -0.25239891 -0.39828360 -0.502267110 -1.846864e+00  1.6173977</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units28 -0.69584637 -0.60500416  0.193376103  7.748523e-02 -0.3254672</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>           Auloalbi    Pardlugu     Pardmont     Pardnigr    Pardpull</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units1   0.4694496 -0.61287678  1.303526038  0.507360931  0.83777683</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units2   1.5099443 -0.28943512 -0.709355200  0.585577005  0.76664032</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units3   0.8223772 -0.26154660  0.758253810  0.653858466  0.84439053</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units4   1.3570441 -0.54418692  0.034369545  0.842501844  1.17760074</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units5   0.8196218 -0.31876740 -0.390795253  1.754190786  1.07660596</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units6   1.3587255 -0.06902292  0.581050758  1.572623206  1.62025380</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units7   1.0838564 -0.39003101  0.787625040  1.451758351  1.23666667</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units8   0.6874896  2.52840173 -0.472015559  0.029059229 -0.12395577</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units9  -0.8423904 -2.31661204  0.693243957 -0.130964231 -0.15592110</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units10 -0.5560140 -0.46865679  1.409504766 -0.249727403  0.47138874</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units11  0.1566779 -2.54800246  1.736610217 -0.370801197 -0.15895067</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units12 -0.7810788 -0.93943008  1.747861917 -0.101151614  0.28368781</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units13  1.9237552  0.11851652  0.992086142  1.818349640  2.07252015</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units14  0.4723337 -0.02878498  0.362204707  0.589507568  1.04851471</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units15 -0.2385922  0.39816470 -1.416580881 -1.199517866 -0.74537763</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units16 -0.5265815  0.42644771 -1.836024171 -0.005167325 -0.32998110</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units17 -1.4930840 -0.10957762 -1.095801514 -0.900085293 -0.27675640</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units18 -0.6514745  0.25993646 -1.377161945 -0.389507627 -0.63671475</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units19 -0.4844318  0.88026005 -1.503426299 -0.192296097 -0.71460896</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units20 -0.6022671  0.98023302 -2.121659124 -0.375909144 -1.48275711</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units21 -0.5647897  1.11425704 -0.586480208 -1.632015732 -0.14160417</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units22 -0.6157938 -1.26219655 -0.009180321 -1.767364310 -0.61955667</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units23 -1.6800203  1.57695614  0.370402688 -0.820979296 -2.06263691</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units24  0.0506789 -1.34992127  0.085726429 -1.537396026 -1.26508071</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units25  1.1959373  1.25405537  0.775186737  1.059809949 -0.71242521</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units26  0.1686554  0.89224565 -0.943511216 -0.427406673 -0.07668162</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units27 -0.3783570 -0.75775110 -0.545935202 -1.533029152 -0.73864864</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units28 -1.6279852  0.69039161  0.377691639 -0.009423297 -0.31409250</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>            Trocterr    Zoraspin</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units1   0.46963399  0.23019514</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units2   0.58415245  0.60518294</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units3   0.61101269 -0.22953141</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units4   0.86254723  1.30829205</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units5   0.91145758  0.99648545</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units6   2.05141550  2.12169933</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units7   1.19415154  0.95643791</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units8  -0.03840288  0.11651861</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units9  -1.41260325 -1.04966908</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units10 -0.65729430 -1.91229775</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units11 -1.08212043 -1.07515715</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units12 -0.54204839 -1.52124732</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units13  2.20627171  1.55703396</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units14  0.95345027  1.50581646</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units15 -0.14805972  0.12588715</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units16 -0.08738422  0.22401234</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units17 -0.22025833  0.01284372</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units18 -0.14588418 -0.89177686</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units19 -0.23897373  0.14103193</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units20 -0.25080092 -0.10288163</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units21 -0.36737073  0.01245841</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units22 -0.87413764 -0.18068313</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units23 -0.96508823 -3.31135756</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units24 -1.05520423 -1.98770070</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units25  1.08240349  0.92177439</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units26 -0.66934895 -1.31676518</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units27 -2.11056028 -1.41322772</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> units28 -0.50115196 -0.98119923</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>             Alopacce    Alopcune    Alopfabr     Arctlute    Arctperi</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units1   1.092284826  0.17215280 -1.28437483 -1.671999373  0.69875790</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units2  -1.765234638 -1.20957574  0.23761368 -0.369366852  0.05653940</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units3   1.172792414 -0.66632813  1.46957671  0.921227361  0.67599721</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units4   1.025075066 -1.26402183 -0.93140561  0.603600093  1.49302548</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units5   2.416192603  0.28867107 -0.18740381  0.966922153  0.71904378</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units6  -2.332430782  1.26854437 -1.46990497  2.077890590 -2.79520233</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units7   0.547025681 -1.07429026 -1.31411328  2.068926515  1.18046291</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units8  -1.784682057 -0.45589944  0.85432398 -0.580803966 -1.23653684</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units9   0.164067610  0.78412837 -1.04650524  0.197864574  0.04533819</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units10 -0.119758270  1.06168194  1.29736494  0.258358131 -1.45416278</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units11  0.996861080 -0.04575339  1.51832978 -0.842509217 -0.68458393</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units12  0.775420808 -0.93683514 -0.87625862 -0.121790967  0.44264081</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units13  1.128804658  0.18127252  0.81392701  1.262413035 -0.66889709</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units14 -0.124847791  0.79314749 -1.40767628  0.795600423 -1.36509529</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units15  0.006266484 -1.33860105 -0.04661852 -0.168995469  1.22306377</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units16 -1.271087026 -0.79608516 -0.03849232  0.006541949  0.30341108</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units17 -1.625953413 -1.51751182  0.64329162  0.376468065 -0.56925213</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units18 -1.172542830  0.86286196 -1.04877709 -0.507414789 -0.13451888</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units19 -1.699116975  1.09322224 -1.59653761 -0.196095369  0.09123978</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units20 -0.522534418 -0.07828422  1.00376420 -0.177512524 -1.18613673</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units21 -0.257354192  0.88847912  0.24822430 -0.373885890  0.96309522</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units22  0.328581076 -0.21365139 -0.96830754 -0.953173481  0.60494435</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units23 -0.523151994  0.31521957 -0.61987914 -1.118210641  1.33489289</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units24 -0.068986012 -0.52856140  0.82202143 -0.123824562  0.73910941</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units25  0.280665820  1.56337339  0.49754263  0.676170607 -0.78115784</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units26  0.219524843 -1.24428276  0.17704969 -1.162720842  0.33440117</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units27  0.312785045 -1.43798238  0.65374666  0.656910994  1.66985327</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units28 -0.055549347  0.23784659 -0.36074712  0.650662452 -0.14578664</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>            Auloalbi    Pardlugu    Pardmont    Pardnigr    Pardpull    Trocterr</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units1   0.49127046 -1.12612323  1.30497694  0.51096600  0.84054776  0.47778733</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units2   1.49732483 -0.44918225 -0.56557818  0.58700684  0.76884435  0.58594724</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units3   0.81213275 -0.25859775  0.76654498  0.64915513  0.84464145  0.60350197</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units4   1.35242610 -0.49950495  0.01986302  0.84955625  1.17756006  0.86165169</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units5   0.81824607 -0.41762853 -0.36547825  1.75754146  1.07629490  0.91222296</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units6   1.29133838 -0.30247578  0.60701039  1.56834752  1.63573704  2.04254333</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units7   1.09501408 -0.38123293  0.79432699  1.45132810  1.23655651  1.19417230</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units8   0.67975073  2.53515362 -0.47115406 -0.04816686 -0.20263645 -0.02497191</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units9  -1.92836621 -1.48650473  0.70273527 -0.12895532 -0.22233778 -1.31328640</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units10 -0.99348909 -0.43515886  1.37748022  0.11161866 -0.64954335 -0.75788900</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units11 -0.06176787 -1.55919723  1.72711102 -0.38938276 -0.20006212 -1.13464700</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units12 -0.35076601 -1.37610295  1.74177471 -0.09313934  0.29193461 -0.53674211</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units13  1.90432874  0.11940141  0.97174216  1.82835460  2.07720649  2.21385171</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units14  0.48990912  0.07024112  0.34198442  0.58123597  1.04745497  0.94398161</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units15 -0.22878656  0.38599624 -1.99160333 -0.75934096 -1.12569336 -0.16625665</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units16 -0.65217256  0.38465635 -0.96390392 -0.04240769 -0.35971676 -0.07257776</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units17 -1.10798772 -0.07742627 -0.88310474 -0.87566189 -0.79095181 -0.20335296</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units18 -0.36774508  0.29410941 -0.78672102 -1.25581276 -0.72374283 -0.16220929</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units19 -0.99276713  0.87026225 -2.72840600 -0.08009601 -0.88900939 -0.24582606</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units20 -0.26986761  0.95430690 -1.49959411 -0.89943040 -0.47669033 -0.23525012</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units21 -0.53075442  1.15105825 -0.66476459 -1.54830204 -0.10512698 -0.35476091</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units22 -0.19486808 -0.64727475 -0.01511828 -1.34934917  0.04050169 -0.85721580</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units23  0.13708151  1.62413699  0.39499647 -1.13502808 -0.49005951 -0.94663692</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units24 -0.93182081  0.15830051  0.02679960  0.14343189  0.16318302 -1.69848073</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units25  0.94264656  1.10688792  0.81905196  1.09237823  0.04805092  1.11365184</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units26  0.30572810  1.05612874 -0.66283818  0.01427232 -0.35272909 -0.57938222</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units27 -0.87868845 -0.88307732 -0.52378449 -0.57650169 -1.49910055 -1.57885345</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units28 -0.91058381  0.19943272  0.44461105 -2.12411278 -1.87464444 -0.58485384</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>            Zoraspin</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units1   0.19559296</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units2   0.59393381</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units3  -0.23305194</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units4   1.29502986</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units5   1.01072224</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units6   2.12284707</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units7   0.95432447</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units8   0.15845410</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units9  -0.66586490</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units10 -0.40394091</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units11 -2.09683663</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units12 -2.19871410</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units13  1.55191200</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units14  1.51443809</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units15  0.06338783</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units16  0.27912554</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units17 -0.03646092</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units18 -0.75771886</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units19  0.07209813</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units20 -0.09335670</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units21  0.02334781</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units22 -0.79562413</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units23 -2.13032299</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units24 -1.03292910</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units25  0.91824403</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units26 -0.62995488</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units27 -0.63008756</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> units28 -0.19985497</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
