@@ -9,10 +9,10 @@
 #' @param label.cex is the size of labels. 
 #' @param edge.lwd is line width, defaulting to 10*partial correlation when varying edge width, and 4 otherwise. 
 #' @param edge.lty is a vector of two integers specifying the line types for positive and negative partial correlations, respectively. Both default to solid lines.
-#' @param ...	other parameters to be passed through to plotting gplot, in particular \code{pad}, the amount to pad the plotting range is useful if labels are being clipped. For details see the \code{\link[sna:gplot]{gplot}} help file.
+#' @param ...	other parameters to be passed through to plotting gplot, in particular \code{pad}, the amount to pad the plotting range is useful if labels are being clipped. For details see the \code{\link[sna]{gplot}} help file.
 #' @return a plot of species associations after accounting for the effect of all other species, positive/negative are blue/pink.
 #' The matrix of node positions (\code{P}) is returned silently.
-#' @seealso \code{\link{gplot}}, \code{\link{cgr}}
+#' @seealso \code{\link[sna]{gplot}}, \code{\link{cgr}}
 #' @importFrom grDevices devAskNewPage
 #' @export plot.cgr
 #' @export

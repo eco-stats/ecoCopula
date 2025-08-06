@@ -11,10 +11,12 @@ utils::globalVariables(c("cov2cor", "factanal", "weighted.mean","coef","plot",
 #' @param n.res number of residual sets to simulate
 #'
 #' @noRd
-simulate.res.S <- function(obj, n.res = 200) {
+simulate_res.S <- function(obj, n.res = 200) {
 
     many.obj = list(obj)[rep(1, n.res)]
-    res = plyr::llply(many.obj, residuals)
+    ## DW, 7.8.25: implementing suggestion https://github.com/gordy2x/ecoCopula/issues/19
+    #    res = plyr::llply(many.obj, residuals)
+    res = lapply(1:n.res,function(x) residuals(obj))
     res = plyr::llply(res, fix_inf)
     
     # residuals function for manyany currently output on uniform scale
