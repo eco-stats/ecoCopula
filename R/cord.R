@@ -63,25 +63,26 @@ cord <- function(obj, nlv = 2, n.samp = 500, seed = NULL) {
     
 
     # simulate full set of residuals n.samp times
-    res = simulate.res.S(obj, n.res = n.samp)
+    res = simulate_res.S(obj, n.res = n.samp)
     # carry out factor analysis
-    S.list = res$S.list
-    res = res$res
-    P = dim(S.list[[1]])[1]
+    ## DW, 7/8/25: getting rid of duplicate names
+    #S.list = res$S.list
+    #res = res$res
+    P = dim(res$S.list[[1]])[1]
     N = dim(obj$fitted)[1]
-    A = factor_opt(nlv, S.list, full = TRUE, quick = FALSE, nobs = N)
+    A = factor_opt(nlv, res$S.list, full = TRUE, quick = FALSE, nobs = N)
     
     #extract elements
     Th.out = A$theta
     Sig.out=A$sigma
     colnames(Sig.out)=rownames(Sig.out)=colnames(Th.out)=rownames(Th.out)=colnames(obj$y)
     
-    res.mean <-  plyr::aaply(plyr::laply(res,function(x) x),c(2,3),weighted.mean,weighs=A$weights)
+    res.mean <-  plyr::aaply(plyr::laply(res$res,function(x) x),c(2,3),weighted.mean,weighs=A$weights)
     Scores = t(as.matrix(A$loadings)) %*% A$theta %*% t(res.mean)
     
     BIC.out = logL = NULL
     k = P * nlv + P - nlv * (nlv - 1)/2
-    logL = ll.icov.all(Th.out, S.list = S.list, nobs = N)
+    logL = ll.icov.all(Th.out, S.list = res$S.list, nobs = N)
     BIC.out = k * log(N) - 2 * logL  -sum(obj$two.loglike)
     
     out=list( loadings = A$loadings[], scores = t(Scores), 

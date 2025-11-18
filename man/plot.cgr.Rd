@@ -36,7 +36,7 @@
 
 \item{edge.lty}{is a vector of two integers specifying the line types for positive and negative partial correlations, respectively. Both default to solid lines.}
 
-\item{...}{other parameters to be passed through to plotting gplot, in particular \code{pad}, the amount to pad the plotting range is useful if labels are being clipped. For details see the \code{\link[sna:gplot]{gplot}} help file.}
+\item{...}{other parameters to be passed through to plotting gplot, in particular \code{pad}, the amount to pad the plotting range is useful if labels are being clipped. For details see the \code{\link[sna]{gplot}} help file.}
 }
 \value{
 a plot of species associations after accounting for the effect of all other species, positive/negative are blue/pink.
@@ -70,5 +70,5 @@ igraph_out \%>\% ggraph('fr') + # see ?layout_tbl_graph_igraph
 }
 }
 \seealso{
-\code{\link{gplot}}, \code{\link{cgr}}
+\code{\link[sna]{gplot}}, \code{\link{cgr}}
 }

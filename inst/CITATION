@@ -2,8 +2,8 @@ citHeader("To cite ecoCopula in publications use:")
 
 citEntry(entry = "Article",
   title        = "Untangling direct species associations from indirect mediator species effects with graphical models",
-  author       = personList(as.person("Gordana C. Popovic"),
-                   as.person("David I. Warton"), as.person("Fiona J. Thomson"),as.person("Angela T. Moles")),
+  author       = c(person("Gordana C. Popovic"),
+                   person("David I. Warton"), person("Fiona J. Thomson"), person("Angela T. Moles")),
   journal      = "Methods in Ecology and Evolution",
   year         = "2019",
   volume       = "10",

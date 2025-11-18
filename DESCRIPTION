@@ -1,6 +1,6 @@
 Package: ecoCopula
 Title: Graphical Modelling and Ordination using Copulas
-Version: 1.0.2
+Version: 1.0.4
 Authors@R: c(person("Gordana", "Popovic", email = "g.popovic@unsw.edu.au", role = c("aut", "cre")),
             person("David", "Warton", role = "ctb"), person("Francis K.C.", "Hui", role = "ctb"),
             person("Michelle", "Lim", role = "ctb"))
@@ -14,7 +14,7 @@ Imports: glasso, plyr, sna, MASS, tweedie,
 License: LGPL (>= 2.1)
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.3.1
+RoxygenNote: 7.3.2
 Suggests: 
     knitr,
     rmarkdown,
