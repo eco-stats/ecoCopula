@@ -1,6 +1,7 @@
 citHeader("To cite ecoCopula in publications use:")
 
-bibEntry(entry = "Article",
+bibentry(
+  bibtype  = "Article",
   title        = "Untangling direct species associations from indirect mediator species effects with graphical models",
   author       = c(person("Gordana C. Popovic"),
                    person("David I. Warton"), person("Fiona J. Thomson"), person("Angela T. Moles")),
@@ -13,4 +14,3 @@ bibEntry(entry = "Article",
   textVersion  =
   paste("Popovic, GC, Warton, DI, Thomson, FJ, Hui, FKC, Moles, AT. Untangling direct species associations from indirect mediator species effects with graphical models. Methods Ecol Evol. 2019; 10: 1571– 1583. ")
 )
-
