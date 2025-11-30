@@ -30,10 +30,12 @@
 #' @section See also:
 #' \code{\link{plot.cgr}}
 #' @examples
+#' \dontrun{
 #' abund <- spider$abund[,1:5]
 #' spider_mod <- stackedsdm(abund,~1, data = spider$x, ncores=2) 
 #' spid_graph=cgr(spider_mod)
 #' plot(spid_graph,pad=1)
+#' }
 #' @import mvabund
 #' @export 
 cgr <- function(obj, lambda = NULL, n.lambda = 100, 
