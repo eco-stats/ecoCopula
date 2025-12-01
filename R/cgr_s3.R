@@ -17,11 +17,13 @@
 #' @export plot.cgr
 #' @export
 #' @examples
+#' \donttest{
 #' abund <- spider$abund[,1:5]
 #' spider_mod <- stackedsdm(abund,~1, data = spider$x, ncores=2) 
 #' spid_graph=cgr(spider_mod)
 #' plot(spid_graph, edge.col=c("forestgreen","darkorchid4"), 
 #'                  vertex.col = "black",vary.edge.lwd=TRUE)
+#' }
 #'                  
 #'\donttest{
 #'library(tidyr)
@@ -90,10 +92,12 @@ plot.cgr = function(x, P = NULL,
 #' @export print.cgr
 #' @export
 #' @examples
+#' \donttest{
 #' abund <- spider$abund[,1:5]
 #' spider_mod <- stackedsdm(abund,~1, data = spider$x, ncores=2) 
 #' spid_graph=cgr(spider_mod)
 #' print(spid_graph)
+#' }
 print.cgr = function (x, ...) 
 {
     cat("\nCall:\n", paste(deparse(x$obj$call), sep = "\n", 
@@ -116,10 +120,12 @@ print.cgr = function (x, ...)
 #' @export summary.cgr
 #' @export
 #' @examples
+#' \donttest{
 #' abund <- spider$abund[,1:5]
 #' spider_mod <- stackedsdm(abund,~1, data = spider$x, ncores=2) 
 #' spid_graph=cgr(spider_mod)
 #' summary(spid_graph)
+#' }
 summary.cgr = function (object, ...) 
 {
     cat("\nCall:\n", paste(deparse(object$obj$call), sep = "\n", 

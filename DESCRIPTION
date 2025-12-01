@@ -1,6 +1,6 @@
 Package: ecoCopula
 Title: Graphical Modelling and Ordination using Copulas
-Version: 1.0.5
+Version: 1.0.6
 Authors@R: c(person("Gordana", "Popovic", email = "g.popovic@unsw.edu.au", role = "aut"),
             person("David", "Warton", email = "david.warton@unsw.edu.au", role = c("ctb","cre")), person("Francis K.C.", "Hui", role = "ctb"),
             person("Michelle", "Lim", role = "ctb"))

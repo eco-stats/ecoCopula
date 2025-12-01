@@ -15,10 +15,12 @@
 Print function for cgr object
 }
 \examples{
+\donttest{
 abund <- spider$abund[,1:5]
 spider_mod <- stackedsdm(abund,~1, data = spider$x, ncores=2) 
 spid_graph=cgr(spider_mod)
 print(spid_graph)
+}
 }
 \seealso{
 \code{\link{cgr}}

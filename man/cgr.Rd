@@ -65,7 +65,7 @@ Popovic, G. C., Hui, F. K., & Warton, D. I. (2018). A general algorithm for cova
 }
 
 \examples{
-\dontrun{
+\donttest{
 abund <- spider$abund[,1:5]
 spider_mod <- stackedsdm(abund,~1, data = spider$x, ncores=2) 
 spid_graph=cgr(spider_mod)
