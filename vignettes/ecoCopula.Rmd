@@ -7,22 +7,9 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-```{r, include = FALSE}
-options(rmarkdown.html_vignette.check_title = FALSE)
 
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>",
-  fig.width=5,
-  fig.height = 3.5,
-  fig.align = 'center',
-  global.par = TRUE
-)
-```
 
-```{r include = FALSE}
-par(mai=c(0.8,0.8,0.2,0.2))
-```
+
 
 
 ## Overview
@@ -53,13 +40,16 @@ Graphical models look at direct and indirect associations between variables (tax
 
 
 Install `ecoCopula` in the usual way.
-```{r, eval=FALSE}
+
+``` r
 install.packages("ecoCopula")
 ```
  
 Then attach the library.
-```{r}
+
+``` r
 library(ecoCopula)
+#> Loading required package: mvabund
 ```
 
 
@@ -67,22 +57,47 @@ library(ecoCopula)
 
 The hunting `spider` dataset (van der Aart & Smeenk-Enserink, 1975) has counts of 12 hunting spiders at 28 sites, collected using pit traps, as well as 6 environmental covariates. Species codes are first four letters of genus then first four letters of species. We will analyse it both as counts and presence-absence.  
 
-```{r}
+
+``` r
 # spider data is stored in ecoCopula
 data(spider)
 X <- as.data.frame(spider$x) # environmental covariates
 ```
 
 Counts
-```{r}
+
+``` r
 abund <- spider$abund # abundance of spiders
 abund[1:5,1:6]
+#>      Alopacce Alopcune Alopfabr Arctlute Arctperi
+#> [1,]       25       10        0        0        0
+#> [2,]        0        2        0        0        0
+#> [3,]       15       20        2        2        0
+#> [4,]        2        6        0        1        0
+#> [5,]        1       20        0        2        0
+#>      Auloalbi
+#> [1,]        4
+#> [2,]       30
+#> [3,]        9
+#> [4,]       24
+#> [5,]        9
 ```
 
 Presence-absence
-```{r}
+
+``` r
 pa=(abund>0)*1 # presence-absence of spiders
 pa[1:4,1:6]
+#>      Alopacce Alopcune Alopfabr Arctlute Arctperi
+#> [1,]        1        1        0        0        0
+#> [2,]        0        1        0        0        0
+#> [3,]        1        1        1        1        0
+#> [4,]        1        1        0        1        0
+#>      Auloalbi
+#> [1,]        1
+#> [2,]        1
+#> [3,]        1
+#> [4,]        1
 ```
 
 
@@ -90,7 +105,8 @@ pa[1:4,1:6]
 
 To plot an ordination biplot for presence-absence data `pa`, we first fit a marginal model using `stackedsdm` or `manyglm` with `family="binomial"`, then use the copula ordination function `cord` on the resulting object, and `plot` the output. 
 
-```{r}
+
+``` r
 # fit marginal model
 spider_pa <- stackedsdm(pa,~1, data = X, family="binomial",ncores = 2) #eqiv. manyglm()
 # fit copula ordination 
@@ -99,11 +115,22 @@ spid_lv=cord(spider_pa)
 plot(spid_lv,biplot = TRUE)
 ```
 
+<div class="figure" style="text-align: center">
+<img src="figure/unnamed-chunk-8-1.png" alt="plot of chunk unnamed-chunk-8"  />
+<p class="caption">plot of chunk unnamed-chunk-8</p>
+</div>
+
 To colour the sites by a predictor, we can create a colour variable.
-```{r}
+
+``` r
 sand<-ifelse(X$bare.sand==0,"red","blue") 
 plot(spid_lv,site.col = sand)
 ```
+
+<div class="figure" style="text-align: center">
+<img src="figure/unnamed-chunk-9-1.png" alt="plot of chunk unnamed-chunk-9"  />
+<p class="caption">plot of chunk unnamed-chunk-9</p>
+</div>
 
 To check that we fit a sensible model we can plot residuals `plot(spider_pa)`. For fancier graphics with `ggplot` see `?plot.cgr`.
 
@@ -111,7 +138,8 @@ To check that we fit a sensible model we can plot residuals `plot(spider_pa)`. F
 
 To plot a *graph* of the spider counts `abund`, we again first fit a marginal model using `stackedsdm` or `manyglm` with `family="negative.binomial"` (for counts).For graphical models it makes the most sense to first control for environmental variables, so that associations between taxa control for those. Then we use the copula graph function `cgr` on the resulting object, and `plot` the output. 
 
-```{r}
+
+``` r
 # fit marginal model
 spider_nb <- stackedsdm(abund,~., data = X, family="negative.binomial", ncores = 2) #eqiv. manyglm()
 # fit copula ordination 
@@ -119,6 +147,11 @@ spid_gr=cgr(spider_nb, seed=3)
 # biplot
 plot(spid_gr, pad=1)
 ```
+
+<div class="figure" style="text-align: center">
+<img src="figure/unnamed-chunk-10-1.png" alt="plot of chunk unnamed-chunk-10"  />
+<p class="caption">plot of chunk unnamed-chunk-10</p>
+</div>
 
 Graphs are interpreted as maps of direct and indirect associations between taxa. 
 
@@ -135,7 +168,8 @@ To check that we fit a sensible model we can plot residuals `plot(spider_nb)`. F
 
 These data contain estimates of cover class for all non-tree vascular plant species in 160 375m^2 circular sample plots and associated environmental variables in Bryce Canyon National Park, Utah, U.S.A. Species codes are first three letters of genus then first three letters of specific epithet. We can download the data from the `labdsv` package, it is in two parts `brycesite` gives the site data and `bryceveg` the cover data.
 
-```{r message=FALSE, warning=FALSE}
+
+``` r
 library(labdsv)
 # site data
 data(brycesite)
@@ -147,7 +181,8 @@ bryceveg<- bryceveg[,-which(colSums(bryceveg>0) <= 20)]  #most abundant species
 ```
 
 To model ordinal data in `stackedsdm` we need the categories to be integers starting at 1.
-```{r}
+
+``` r
 #recode data to integer categories
 old <- c(0,0.2,0.5,1,2,3,4,5,6) #existing categories
 bryceord=bryceveg
@@ -160,12 +195,14 @@ bryce_marg <- stackedsdm(bryceord, formula_X = ~ 1, data = brycesite, family="or
 
 
 ### Ordination
-```{r}
+
+``` r
 bryce_ordi=cord(bryce_marg)
 ```
 
 We plot the ordinations with `ggplot`, colouring sites by elevation gradient. If we had traits we could color species by traits. 
-```{r}
+
+``` r
 library(RColorBrewer)
 library(ggplot2)
 # data frames for plotting
@@ -180,12 +217,18 @@ ggplot()+
   theme_classic()
 ```
 
+<div class="figure" style="text-align: center">
+<img src="figure/unnamed-chunk-14-1.png" alt="plot of chunk unnamed-chunk-14"  />
+<p class="caption">plot of chunk unnamed-chunk-14</p>
+</div>
+
 Low elevation and high elevation sites have quite different species, with  low elevations associated with e.g. cermon, and high elevation with e.g. pacmyr.
 
 ### Graphical model of veg species
 
 We will control for slope. 
-```{r message=FALSE, warning=FALSE}
+
+``` r
 cont_preds=sapply(brycesite, class)%in%c("int","num")
 brycesite[,cont_preds]=scale(brycesite[,cont_preds])
 bryce_marg_all <- stackedsdm(bryceord, formula_X = ~ slope, data = brycesite,
@@ -195,7 +238,8 @@ bryce_graph<-cgr(bryce_marg_all, seed = 1) #seed for demonstration
 ```
 For more detailed plots `cgr` has an igraph output, which you can manipulate and plot with the `tidygraph` and  `ggraph` packages as well as the `igraph` package. 
 
-```{r message=FALSE, warning=FALSE}
+
+``` r
 igraph_out<-bryce_graph$best_graph$igraph_out
 
 library(tidyr)
@@ -210,8 +254,12 @@ igraph_out %>% ggraph('fr') + # see ?layout_tbl_graph_igraph
     geom_node_point(size=2)+
     theme_void() +
     theme(legend.position = 'none')
-
 ```
+
+<div class="figure" style="text-align: center">
+<img src="figure/unnamed-chunk-16-1.png" alt="plot of chunk unnamed-chunk-16"  />
+<p class="caption">plot of chunk unnamed-chunk-16</p>
+</div>
 There is a strong positive association between e.g. ceamar and arcpat after controlling for all the other species. 
 
 
